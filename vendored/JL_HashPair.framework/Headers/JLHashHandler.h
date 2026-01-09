@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <JLLogHelper/JLLogHelper.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -43,8 +44,15 @@ typedef void(^JLHashBlock)(BOOL ret);
 -(void)inputPairData:(NSData*)rData;
 
 
+/// 停止设备认证过程
+/// stop device pairing
+-(void)stopAuthPair;
+
+
 /// 打印当前SDK的版本
 +(void)sdkVersion;
+
+
 
 @end
 

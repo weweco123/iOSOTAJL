@@ -40,12 +40,7 @@
 #import "JLWearSyncInfoModel.h"
 #import "JLWearSyncFinishModel.h"
 #import "JLWearSyncRealTimeModel.h"
-#import "JLWearSyncHealthChart.h"
-#import "JLWearSyncHealthHeartRateChart.h"
-#import "JLWearSyncHealthBloodOxyganChart.h"
-#import "JLWearSyncHealthSleepChart.h"
-#import "JLWearSyncHealthStepChart.h"
-#import "JLWearSyncHealthWeightChart.h"
+#import "JLeSimManager.h"
 
 
 #include <syslog.h>

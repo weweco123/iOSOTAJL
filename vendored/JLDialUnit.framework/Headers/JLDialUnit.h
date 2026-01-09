@@ -18,4 +18,13 @@ FOUNDATION_EXPORT const unsigned char JLDialUnitVersionString[];
 
 #import <JLDialUnit/DialManager.h>
 #import <JLDialUnit/FatfsObject.h>
+#import <JLDialUnit/ZipZap.h>
+#import <JLDialUnit/ZZArchive.h>
+#import <JLDialUnit/ZZArchiveEntry.h>
+#import <JLDialUnit/ZZConstants.h>
+#import <JLDialUnit/ZZError.h>
+#import <JLDialUnit/JLDialSourceModel.h>
+#import <JLDialUnit/JLDialUnitMgr.h>
+#import <JLDialUnit/JLSourceUpdate.h>
+
 

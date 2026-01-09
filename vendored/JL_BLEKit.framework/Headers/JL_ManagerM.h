@@ -84,8 +84,7 @@ extern NSString *kJL_MANAGER_KEY_OBJECT;    //KEY --> 对象
 @property(nonatomic,strong)JL_AlarmClockManager     *mAlarmClockManager;
 @property(nonatomic,strong)JL_LightManager          *mLightManager;
 @property(nonatomic,strong)JL_TwsManager            *mTwsManager;
-@property(nonatomic,strong)JL_SoundCardManager      *mSoundCardManager;
-@property(nonatomic,strong)JL_SpeexManager          *mSpeexManager;
+@property(nonatomic,strong)JL_SpeexManager          *mSpeexManager __attribute__((deprecated("alloc with JL_SpeexManager shareSpeexManager")));
 @property(nonatomic,strong)JL_LRCManager            *mLrcManager;
 @property(nonatomic,strong)JL_FindDeviceManager     *mFindDeviceManager;
 @property(nonatomic,strong)JL_MusicControlManager   *mMusicControlManager;
@@ -95,6 +94,8 @@ extern NSString *kJL_MANAGER_KEY_OBJECT;    //KEY --> 对象
 @property(nonatomic,strong)JL_SystemVolume          *mSystemVolume;
 @property(nonatomic,strong)JL_CustomManager         *mCustomManager;
 @property(nonatomic,strong)JL_BatchManger           *mBatchManger;
+
+@property(nonatomic,strong)JL_SoundCardManager      *mSoundCardManager;
 @property(nonatomic,strong)JL_DeviceLogs            *mDeviceLogs;
 
 @property(nonatomic,strong)JL_BigDataManager        *mBigDataManager;

@@ -7,7 +7,7 @@
 
 #import <Foundation/Foundation.h>
 #import <JL_BLEKit/JL_BLEKit.h>
-#import <ZipZap/ZipZap.h>
+
 
 
 NS_ASSUME_NONNULL_BEGIN
@@ -84,6 +84,7 @@ typedef void(^FatfsReplaceFile_BK)(float progress);
 
 /// 重置外部flash
 +(BOOL)makeResetFlash;
+
 
 @end
 

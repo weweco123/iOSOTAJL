@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import <Foundation/Foundation.h>
 //! Project version number for JL_BLEKit.
 FOUNDATION_EXPORT double JL_BLEKitVersionNumber;
 
@@ -21,6 +21,7 @@ FOUNDATION_EXPORT const unsigned char JL_BLEKitVersionString[];
 #import <JL_BLEKit/JL_BLEAction.h>
 #import <JL_BLEKit/JL_vad.h>
 #import <JL_BLEKit/JL_TypeEnum.h>
+#import <JL_BLEKit/JLTaskChain.h>
 
 #import <JL_BLEKit/JLModel_Device.h>
 #import <JL_BLEKit/JLModel_RTC.h>
@@ -56,12 +57,18 @@ FOUNDATION_EXPORT const unsigned char JL_BLEKitVersionString[];
 #import <JL_BLEKit/JL_AlarmClockManager.h>
 #import <JL_BLEKit/JL_LightManager.h>
 #import <JL_BLEKit/JL_TwsManager.h>
+#import <JL_BLEKit/JLTwsSupportFuncs.h>
+#import <JL_BLEKit/JLTranslateSet.h>
+#import <JL_BLEKit/JLTranslateAudio.h>
+#import <JL_BLEKit/JLTranslateSetMode.h>
+#import <JL_BLEKit/JLTranslationManager.h>
 #import <JL_BLEKit/JL_SoundCardManager.h>
 #import <JL_BLEKit/JL_LrcManager.h>
 #import <JL_BLEKit/JL_SpeexManager.h>
 #import <JL_BLEKit/JL_SpeechAIttsHandler.h>
 #import <JL_BLEKit/JL_FindDeviceManager.h>
 #import <JL_BLEKit/JL_MusicControlManager.h>
+#import <JL_BLEKit/JLDevPlayerCtrl.h>
 #import <JL_BLEKit/JL_FmManager.h>
 #import <JL_BLEKit/JL_SystemEQ.h>
 #import <JL_BLEKit/JL_SystemTime.h>
@@ -74,6 +81,7 @@ FOUNDATION_EXPORT const unsigned char JL_BLEKitVersionString[];
 #import <JL_BLEKit/JLDeviceConfig.h>
 #import <JL_BLEKit/JL_BigDataManager.h>
 #import <JL_BLEKit/JLAiManager.h>
+#import <JL_BLEKit/JLAIDialManager.h>
 
 
 #import <JL_BLEKit/JLWearable.h>
@@ -89,7 +97,6 @@ FOUNDATION_EXPORT const unsigned char JL_BLEKitVersionString[];
 #import <JL_BLEKit/JL_SDM_OxSaturation.h>
 #import <JL_BLEKit/JL_SDM_SportMessage.h>
 #import <JL_BLEKit/JL_SDM_Header.h>
-#import <JL_BLEKit/JLSportRecordModel.h>
 #import <JL_BLEKit/NSData+ToUnit.h>
 #import <JL_BLEKit/JL_MSG_Weather.h>
 #import <JL_BlEKit/JL_MSG_Func.h>
@@ -97,8 +104,20 @@ FOUNDATION_EXPORT const unsigned char JL_BLEKitVersionString[];
 #import <JL_BLEKit/JLWatchEnum.h>
 #import <JL_BLEKit/JL_WatchProtocol.h>
 
-
-#import <JL_BlEKit/bmp_convert.h>
-#import <JL_BLEKit/BitmapTool.h>
-
+#import <JL_BLEKit/ECThreadHelper.h>
+#import <JL_BLEKit/JLHttpHelper.h>
+#import <JL_BLEKit/ECBDTObjc.h>
+#import <JL_BLEKit/ECBDTManager.h>
+#import <JL_BLEKit/JLModelDevFunc.h>
+#import <JL_BLEKit/JLModelCardInfo.h>
+#import <JL_BLEKit/JLPublicSetting.h>
+#import <JL_BLEKit/JL4GUpgradeManager.h>
+#import <JL_BLEKit/JLDeviceConfigTws.h>
+#import <JL_BLEKit/JLDialInfoExtentedModel.h>
+#import <JL_BLEKit/JLDialInfoExtentManager.h>
+#import <JL_BLEKit/JLModelSpdif.h>
+#import <JL_BLEKit/JLModelPCServer.h>
+#import <JL_BLEKit/JLSpdifPCManager.h>
+#import <JL_BLEKit/JLFlashOpMgr.h>
+#import <JL_BLEKit/JLTipsSoundReplaceMgr.h>
 

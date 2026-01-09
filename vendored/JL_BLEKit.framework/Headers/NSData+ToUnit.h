@@ -40,7 +40,24 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param to 长度
 -(NSData *)subf:(NSInteger)from t:(NSInteger)to;
 
+-(uint16_t)crc:(uint16_t)baseCrc;
 
+@end
+
+
+@interface NSMutableData(WithUnit)
+
+-(void)appendUint8:(uint8_t)k;
+
+-(void)appendUint16:(uint16_t)k;
+
+-(void)appendUint32:(uint32_t)k;
+@end
+
+
+@interface NSString(WithUnit)
+
+-(NSString *)formatLog;
 
 @end
 

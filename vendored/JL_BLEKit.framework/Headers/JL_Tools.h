@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <JL_BLEKit/NSObject+JLTools.h>
+#import <JLLogHelper/JLLogHelper.h>
 
 NS_ASSUME_NONNULL_BEGIN
 typedef void(^JL_Action)(void);
@@ -15,6 +16,8 @@ typedef void(^JL_Timer_BK)(void);
 
 @class JL_Timer;
 @interface JL_Tools : NSObject
+
+
 /**
  Data自定义截取。
  
@@ -161,7 +164,7 @@ typedef void(^JL_Timer_BK)(void);
  @param key 键值
  @return 返回对象
  */
-+(id)getUserByKey:(NSString*)key;
++(id _Nullable)getUserByKey:(NSString*)key;
 
 /**
  移除NSUserDefault相对应的对象
@@ -360,9 +363,17 @@ typedef void(^JL_Timer_BK)(void);
 ///   - encodeType: 编码格式
 +(NSData *)stringBigFileUnicode:(NSString *)name withFileNameIndex:(int)fileNameIndex WithEncode:(NSStringEncoding) encodeType;
 /**
- * 移除不必要字符  \ / : " < > . space
+ * 移除不必要字符  \ / : " < > . 
  */
 +(NSString *)removeUnnecessaryPunctuationCharactersWithString:(NSString *)textString;
+
+/**
+ * 名字移除目标字符
+ * @param pattern 目标需要移除的字符
+ * NSString *pattern = @"[/:*?\"<>|]";
+ * @param textString 源字符串
+ */
++(NSString *)removeCharacters:(NSString*)pattern WithString:(NSString *)textString;
 
 /**
  *  大文件传输，长短文件名
@@ -384,10 +395,7 @@ typedef void(^JL_Timer_BK)(void);
 /// @param data 数据
 +(NSData *)beLtv:(uint8_t)type Data:(NSData*)data;
 
-/**
- *  开启打印
- */
-+(void)openLogTextFile;
+
 
 @end
 
@@ -395,6 +403,7 @@ typedef void(^JL_Timer_BK)(void);
 @property(nonatomic,assign)NSInteger            subTimeout; //超时时间(默认5s)
 @property(nonatomic,assign)NSTimeInterval       subScale;   //默认1.0s
 -(void)waitForTimeoutResult:(JL_Timer_BK)result;
+-(void)continueTimeout;
 -(void)cancelTimeout;
 -(void)threadWait;
 -(void)threadContinue;

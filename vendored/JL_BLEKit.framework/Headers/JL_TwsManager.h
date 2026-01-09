@@ -11,6 +11,7 @@
 #import <JL_BLEKit/JL_FunctionBaseManager.h>
 #import <JL_BLEKit/JL_Tools.h>
 #import <JL_BLEKit/JLModel_ANC.h>
+#import <JL_BLEKit/JLTwsSupportFuncs.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -38,41 +39,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-//MARK: - TWS耳机扩展功能支持类型
-/// TWS耳机扩展功能支持类型
-@interface TwsSupportFuncs : NSObject
-
-/// 是否支持ANC功能
-@property(nonatomic,assign)BOOL isSupportAnc;
-
-/// 是否支持游戏模式
-@property(nonatomic,assign)BOOL isSupportGameMode;
-
-/// 是否支持自适应ANC
-@property(nonatomic,assign)BOOL isSupportAutoAnc;
-
-/// 是否支持智能免摘
-@property(nonatomic,assign)BOOL isSupportSmartPickFree;
-
-/// 是否支持场景降噪
-/// scene noise reduction
-@property(nonatomic,assign)BOOL isSupportSceneNoiseReduction;
-
-/// 是否支持风噪检测
-/// Noise detection
-@property(nonatomic,assign)BOOL isSupportNoiseDetection;
-
-/// 是否支持人声增强模式
-/// Vocal Boost Mode
-@property(nonatomic,assign)BOOL isSupportVocalBoostMode;
-
-/// 固件是否支持“一拖二”开 关功能
-/// Does the firmware support the "one drag two" switch function
-@property(nonatomic,assign)BOOL isSupportDragWithMore;
-
-
-@end
-
 
 
 //MARK: - TWS 控制类
@@ -80,7 +46,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface JL_TwsManager : JL_FunctionBaseManager
 
 /// 扩展功能支持
-@property(nonatomic,strong)TwsSupportFuncs *supports;
+@property(nonatomic,strong,readonly)JLTwsSupportFuncs *supports;
 
 ///耳机电量
 ///TWS earphones Electricity
@@ -148,9 +114,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,readonly,assign)BOOL dragWithMore;
 
 
-/**
- @param name 设置对耳设备的EDR名字
- */
+
+/// 设置设备名称
+/// - Parameter name: 设置对耳设备的EDR名字
 -(void)cmdHeadsetEdrName:(NSData*)name;
 
 #pragma mark ---> 按键设置(对耳)
@@ -186,9 +152,9 @@ typedef NS_ENUM(UInt8, JL_HeadsetButtonSettingFunction) {
             0x07    拒听
             0x08    拍照
  */
--(void)cmdHeadsetKeySettingKey:(JL_HeadsetButtonSettingKey)key
-                        Action:(JL_HeadsetButtonSettingAction)act
-                      Function:(JL_HeadsetButtonSettingFunction)fuc;
+-(void)cmdHeadsetKeySettingKey:(uint8_t)key
+                        Action:(uint8_t)act
+                      Function:(uint8_t)fuc;
 
 #pragma mark ---> LED设置(对耳)
 
@@ -226,8 +192,8 @@ typedef NS_ENUM(UInt8, JL_HeadsetLedEffect) {
                0x05    红蓝交替快闪
                0x06    红蓝交替慢闪
  */
--(void)cmdHeadsetLedSettingScene:(JL_HeadsetScene)scene
-                          Effect:(JL_HeadsetLedEffect)effect;
+-(void)cmdHeadsetLedSettingScene:(uint8_t)scene
+                          Effect:(uint8_t)effect;
 
 #pragma mark ---> MIC设置(耳机)
 typedef NS_ENUM(UInt8, JL_HeadsetMicSettingMode) {
@@ -250,7 +216,7 @@ typedef NS_ENUM(UInt8, JL_HeadsetWorkingMode) {
  @param mode 1： 普通模式
         2： 游戏模式
  */
--(void)cmdHeadsetWorkSettingMode:(JL_HeadsetWorkingMode)mode;
+-(void)cmdHeadsetWorkSettingMode:(uint8_t)mode;
 
 #pragma mark ---> 同步时间戳(耳机)
 /**
@@ -271,6 +237,7 @@ typedef NS_ENUM(uint32_t, JL_HeadsetAdviceFlag) {
     JL_HeadsetAdviceFlagConnectingTime              = 1 << 7,       //连接时间
     JL_HeadsetAdviceFlagEarDetection                = 1 << 8,       //入耳检测
     JL_HeadsetAdviceFlagLanguage                    = 1 << 9,       //语言类型
+    JL_HeadsetAdviceFlagAll                         = 0xFFFFFFFF    //全部
 };
 /**
  @param flag  BIT0    小机电量获取 格式为3个字节 参考广播包格式
@@ -298,7 +265,7 @@ typedef NS_ENUM(uint32_t, JL_HeadsetAdviceFlag) {
                 @"LED_EFFECT"
                 @"MIC_MODE"
                 @"WORK_MODE"
-                @"VID"
+                @"UID"
                 @"UID"
                 @"PID"
                 @"LINK_TIME"
@@ -312,7 +279,7 @@ typedef NS_ENUM(uint32_t, JL_HeadsetAdviceFlag) {
 #pragma mark ---> 设备广播通知(耳机)
 /**
     @{@"JLID": 杰理ID,
-    @"VID": ,
+    @"UID": ,
     @"PID":  ,
     @"EDR": ,
     @"SCENE": ,
@@ -372,22 +339,28 @@ extern NSString *kJL_MANAGER_HEADSET_TIPS;
 
 //MARK: - 一拖二相关命令
 
-typedef void(^JL_MulitLinksInfo_BK)(JL_CMDStatus status,NSArray <NSString *>* __nullable phoneNames);
+typedef void(^JL_MulitLinksInfo_BK)(JL_CMDStatus status,NSArray <JLTWSAddrNameInfo *>* __nullable phoneInfos);
 
 /// 设备上传一拖二设备信息列表
 extern NSString* kJL_MULIT_NAME_LIST;
 
 /// 获取设备已连接手机名
 /// 通知设备上传一拖二设备信息列表
-/// @param phoneName 手机的名字
 /// @param result 设备所连接的手机名字列表
--(void)cmdGetDeviceInfoList:(NSString *)phoneName result:(JL_MulitLinksInfo_BK)result;
+-(void)cmdGetDeviceInfoListResult:(JL_MulitLinksInfo_BK)result;
 
+/// 通知设备一连上手机地址和绑定信息
+/// - Parameters:
+///   - addr: 手机EDR地址
+///   - name: 手机蓝牙名称
+///   - result: 结果
+-(void)cmdBindDeviceInfo:(NSData *)addr phone:(NSString *)name result:(JL_MulitLinksInfo_BK)result;
 
 /// 一拖二开关
 /// @param dragWithMore 开关状态
+/// @param addr 手机的经典蓝牙地址（通过cmdGetDeviceInfoList 获取）
 /// @param result   结果回调
--(void)setDragWithMore:(BOOL)dragWithMore result:(JL_CMD_RESPOND)result;
+-(void)setDragWithMore:(BOOL)dragWithMore phoneBleAddr:(NSData *) addr result:(JL_CMD_RESPOND)result;
 
 @end
 

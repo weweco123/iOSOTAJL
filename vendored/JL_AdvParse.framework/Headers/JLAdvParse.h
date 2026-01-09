@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <JLLogHelper/JLLogHelper.h>
 
 NS_ASSUME_NONNULL_BEGIN
-
 
 typedef NS_ENUM(UInt8,JL_AdvType) {
     JL_AdvTypeSoundBox              = 0,     //音箱类型
@@ -44,6 +44,11 @@ typedef NS_ENUM(NSInteger,JL_DeviceType) {
 /// @param advertData 蓝牙广播字典
 +(NSDictionary*)bluetoothAdvParse:(NSData *_Nullable)key AdvData:(NSDictionary*_Nonnull)advertData;
 
+/// 解析蓝牙广播包
+/// @param advertData 蓝牙广播报字典
+/// @param rssi 蓝牙信号强度
++(NSDictionary *)bluetoothAdvData:(NSDictionary *)advertData RSSI:(NSNumber *)rssi;
+
 #pragma mark - 回连广播包信息
 /**
  *  获取广播包kCBAdvDataManufacturerData里面 'JLOTA' 标识的蓝牙地址
@@ -57,6 +62,9 @@ typedef NS_ENUM(NSInteger,JL_DeviceType) {
  *  @param kCBAdvDataManufacturerData 广播包
  */
 + (Boolean)otaBleMacAddress:(NSString *)otaBleMacAddress isEqualToCBAdvDataManufacturerData:(NSData *)kCBAdvDataManufacturerData;
+
+
+
 
 @end
 

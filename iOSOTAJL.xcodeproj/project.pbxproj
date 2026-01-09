@@ -7,21 +7,56 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F050583C2F10E12600C744C1 /* JL_AdvParse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F050582E2F10E0FA00C744C1 /* JL_AdvParse.framework */; };
+		F050583D2F10E12600C744C1 /* JL_AdvParse.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F050582E2F10E0FA00C744C1 /* JL_AdvParse.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F050583F2F10E14700C744C1 /* JLLogHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F05058342F10E0FA00C744C1 /* JLLogHelper.framework */; };
+		F05058402F10E14700C744C1 /* JLLogHelper.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F05058342F10E0FA00C744C1 /* JLLogHelper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F05058412F10E15600C744C1 /* JLBmpConvertKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F05058322F10E0FA00C744C1 /* JLBmpConvertKit.framework */; };
+		F05058422F10E15600C744C1 /* JLBmpConvertKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F05058322F10E0FA00C744C1 /* JLBmpConvertKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F05058432F10E16500C744C1 /* JL_OTALib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F05058312F10E0FA00C744C1 /* JL_OTALib.framework */; };
+		F05058442F10E16500C744C1 /* JL_OTALib.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F05058312F10E0FA00C744C1 /* JL_OTALib.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F05058452F10E18100C744C1 /* JLDialUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F05058332F10E0FA00C744C1 /* JLDialUnit.framework */; };
+		F05058462F10E18100C744C1 /* JLDialUnit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F05058332F10E0FA00C744C1 /* JLDialUnit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F05058472F10E19100C744C1 /* JL_HashPair.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F05058302F10E0FA00C744C1 /* JL_HashPair.framework */; };
+		F05058482F10E19100C744C1 /* JL_HashPair.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F05058302F10E0FA00C744C1 /* JL_HashPair.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F05058492F10E19D00C744C1 /* JL_BLEKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F050582F2F10E0FA00C744C1 /* JL_BLEKit.framework */; };
+		F050584A2F10E19D00C744C1 /* JL_BLEKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F050582F2F10E0FA00C744C1 /* JL_BLEKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F0DA9AAD2B3585AD00B55989 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F0DA9AAC2B3585AD00B55989 /* AppDelegate.m */; };
 		F0DA9AB32B3585AD00B55989 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0DA9AB22B3585AD00B55989 /* ViewController.m */; };
 		F0DA9AB62B3585AD00B55989 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0DA9AB42B3585AD00B55989 /* Main.storyboard */; };
 		F0DA9AB82B3585B200B55989 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0DA9AB72B3585B200B55989 /* Assets.xcassets */; };
 		F0DA9ABB2B3585B200B55989 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0DA9AB92B3585B200B55989 /* LaunchScreen.storyboard */; };
 		F0DA9ABE2B3585B200B55989 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F0DA9ABD2B3585B200B55989 /* main.m */; };
-		F0DA9ACB2B3586E400B55989 /* JL_AdvParse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0DA9AC62B3586E400B55989 /* JL_AdvParse.framework */; };
-		F0DA9ACC2B3586E400B55989 /* JL_BLEKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0DA9AC72B3586E400B55989 /* JL_BLEKit.framework */; };
-		F0DA9ACD2B3586E400B55989 /* JL_OTALib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0DA9AC82B3586E400B55989 /* JL_OTALib.framework */; };
-		F0DA9ACE2B3586E400B55989 /* JL_HashPair.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0DA9AC92B3586E400B55989 /* JL_HashPair.framework */; };
-		F0DA9ACF2B3586E400B55989 /* JLDialUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0DA9ACA2B3586E400B55989 /* JLDialUnit.framework */; };
-		F0DA9AD12B36CE8A00B55989 /* ZipZap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0DA9AD02B36CE8A00B55989 /* ZipZap.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		F050583E2F10E12600C744C1 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				F05058482F10E19100C744C1 /* JL_HashPair.framework in Embed Frameworks */,
+				F05058422F10E15600C744C1 /* JLBmpConvertKit.framework in Embed Frameworks */,
+				F050584A2F10E19D00C744C1 /* JL_BLEKit.framework in Embed Frameworks */,
+				F05058462F10E18100C744C1 /* JLDialUnit.framework in Embed Frameworks */,
+				F050583D2F10E12600C744C1 /* JL_AdvParse.framework in Embed Frameworks */,
+				F05058402F10E14700C744C1 /* JLLogHelper.framework in Embed Frameworks */,
+				F05058442F10E16500C744C1 /* JL_OTALib.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		F050582E2F10E0FA00C744C1 /* JL_AdvParse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = JL_AdvParse.framework; sourceTree = "<group>"; };
+		F050582F2F10E0FA00C744C1 /* JL_BLEKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = JL_BLEKit.framework; sourceTree = "<group>"; };
+		F05058302F10E0FA00C744C1 /* JL_HashPair.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = JL_HashPair.framework; sourceTree = "<group>"; };
+		F05058312F10E0FA00C744C1 /* JL_OTALib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = JL_OTALib.framework; sourceTree = "<group>"; };
+		F05058322F10E0FA00C744C1 /* JLBmpConvertKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = JLBmpConvertKit.framework; sourceTree = "<group>"; };
+		F05058332F10E0FA00C744C1 /* JLDialUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = JLDialUnit.framework; sourceTree = "<group>"; };
+		F05058342F10E0FA00C744C1 /* JLLogHelper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = JLLogHelper.framework; sourceTree = "<group>"; };
 		F0DA9AA82B3585AD00B55989 /* iOSOTAJL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSOTAJL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0DA9AAB2B3585AD00B55989 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F0DA9AAC2B3585AD00B55989 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -32,12 +67,6 @@
 		F0DA9ABA2B3585B200B55989 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F0DA9ABC2B3585B200B55989 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F0DA9ABD2B3585B200B55989 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		F0DA9AC62B3586E400B55989 /* JL_AdvParse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = JL_AdvParse.framework; sourceTree = "<group>"; };
-		F0DA9AC72B3586E400B55989 /* JL_BLEKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = JL_BLEKit.framework; sourceTree = "<group>"; };
-		F0DA9AC82B3586E400B55989 /* JL_OTALib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = JL_OTALib.framework; sourceTree = "<group>"; };
-		F0DA9AC92B3586E400B55989 /* JL_HashPair.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = JL_HashPair.framework; sourceTree = "<group>"; };
-		F0DA9ACA2B3586E400B55989 /* JLDialUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = JLDialUnit.framework; sourceTree = "<group>"; };
-		F0DA9AD02B36CE8A00B55989 /* ZipZap.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ZipZap.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,12 +74,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F0DA9AD12B36CE8A00B55989 /* ZipZap.framework in Frameworks */,
-				F0DA9ACB2B3586E400B55989 /* JL_AdvParse.framework in Frameworks */,
-				F0DA9ACF2B3586E400B55989 /* JLDialUnit.framework in Frameworks */,
-				F0DA9ACD2B3586E400B55989 /* JL_OTALib.framework in Frameworks */,
-				F0DA9ACE2B3586E400B55989 /* JL_HashPair.framework in Frameworks */,
-				F0DA9ACC2B3586E400B55989 /* JL_BLEKit.framework in Frameworks */,
+				F05058452F10E18100C744C1 /* JLDialUnit.framework in Frameworks */,
+				F050583F2F10E14700C744C1 /* JLLogHelper.framework in Frameworks */,
+				F05058492F10E19D00C744C1 /* JL_BLEKit.framework in Frameworks */,
+				F05058412F10E15600C744C1 /* JLBmpConvertKit.framework in Frameworks */,
+				F05058432F10E16500C744C1 /* JL_OTALib.framework in Frameworks */,
+				F05058472F10E19100C744C1 /* JL_HashPair.framework in Frameworks */,
+				F050583C2F10E12600C744C1 /* JL_AdvParse.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,12 +123,13 @@
 		F0DA9AC52B3586E400B55989 /* vendored */ = {
 			isa = PBXGroup;
 			children = (
-				F0DA9AD02B36CE8A00B55989 /* ZipZap.framework */,
-				F0DA9AC62B3586E400B55989 /* JL_AdvParse.framework */,
-				F0DA9AC72B3586E400B55989 /* JL_BLEKit.framework */,
-				F0DA9AC82B3586E400B55989 /* JL_OTALib.framework */,
-				F0DA9AC92B3586E400B55989 /* JL_HashPair.framework */,
-				F0DA9ACA2B3586E400B55989 /* JLDialUnit.framework */,
+				F050582E2F10E0FA00C744C1 /* JL_AdvParse.framework */,
+				F050582F2F10E0FA00C744C1 /* JL_BLEKit.framework */,
+				F05058302F10E0FA00C744C1 /* JL_HashPair.framework */,
+				F05058312F10E0FA00C744C1 /* JL_OTALib.framework */,
+				F05058322F10E0FA00C744C1 /* JLBmpConvertKit.framework */,
+				F05058332F10E0FA00C744C1 /* JLDialUnit.framework */,
+				F05058342F10E0FA00C744C1 /* JLLogHelper.framework */,
 			);
 			path = vendored;
 			sourceTree = "<group>";
@@ -113,6 +144,7 @@
 				F0DA9AA42B3585AD00B55989 /* Sources */,
 				F0DA9AA52B3585AD00B55989 /* Frameworks */,
 				F0DA9AA62B3585AD00B55989 /* Resources */,
+				F050583E2F10E12600C744C1 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -323,8 +355,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.1.0.0;
-				DEVELOPMENT_TEAM = K9UEBE4VUJ;
+				CURRENT_PROJECT_VERSION = 1.2.0.0;
+				DEVELOPMENT_TEAM = J34C74RF3H;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/vendored",
@@ -336,12 +368,12 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = cn.iOSOTAJL.ute;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -355,8 +387,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.1.0.0;
-				DEVELOPMENT_TEAM = K9UEBE4VUJ;
+				CURRENT_PROJECT_VERSION = 1.2.0.0;
+				DEVELOPMENT_TEAM = J34C74RF3H;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/vendored",
@@ -368,12 +400,12 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = cn.iOSOTAJL.ute;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

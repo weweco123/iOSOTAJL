@@ -19,15 +19,19 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 150)];
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0,
+                                                               0,
+                                                               self.view.frame.size.width-30,
+                                                               150)];
     label.textColor = [UIColor blackColor];
     label.center = CGPointMake(self.view.frame.size.width*0.5, self.view.frame.size.height*0.5);
-    label.text = @"Nice";
+    label.text = @"Welcome";
     label.textAlignment = NSTextAlignmentCenter;
-    label.font = [UIFont boldSystemFontOfSize:150];
+    label.adjustsFontSizeToFitWidth = YES;
+    label.font = [UIFont boldSystemFontOfSize:100];
     [self.view addSubview:label];
     
-    NSLog(@"Nice ~");
+    NSLog(@"Welcome,\nAll framework need to set 'Embed & Sign' ");
 }
 
 
